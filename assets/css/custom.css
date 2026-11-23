@@ -1,0 +1,229 @@
+/* XD Property Rental Ltd - small additions to Tailwind utilities */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px;
+  background: #1B2430;
+  color: #F6F4EF;
+  font-weight: 500;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Focus states: teal on light backgrounds, brass on dark */
+:focus-visible {
+  outline: 3px solid #1F4E5F;
+  outline-offset: 3px;
+}
+.on-dark :focus-visible {
+  outline-color: #C8963E;
+}
+#main:focus,
+#registered-office:focus,
+section[tabindex="-1"]:focus {
+  outline: none;
+}
+
+/* Soft background wash behind the hero */
+.hero-wash {
+  background:
+    radial-gradient(60rem 30rem at 85% -10%, rgba(200, 150, 62, 0.16), transparent 60%),
+    radial-gradient(50rem 30rem at -10% 110%, rgba(31, 78, 95, 0.12), transparent 60%);
+}
+
+.eyebrow {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8A6420;
+}
+
+/* Navigation links */
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: rgba(27, 36, 48, 0.85);
+  text-decoration: none;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+.nav-link:hover {
+  color: #1F4E5F;
+  background: #E3ECEE;
+}
+.mobile-link {
+  display: block;
+  border-radius: 0.75rem;
+  padding: 0.85rem 1rem;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: #1B2430;
+  text-decoration: none;
+}
+.mobile-link:hover {
+  background: #E3ECEE;
+  color: #1F4E5F;
+}
+
+/* Cards and icon tiles */
+.service-card {
+  border-radius: 1rem;
+  border: 1px solid rgba(27, 36, 48, 0.1);
+  background: #ffffff;
+  padding: 1.75rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+@media (min-width: 640px) {
+  .service-card { padding: 2rem; }
+}
+.service-card:hover {
+  border-color: rgba(31, 78, 95, 0.35);
+  box-shadow: 0 12px 30px -18px rgba(27, 36, 48, 0.35);
+  transform: translateY(-2px);
+}
+.icon-tile {
+  display: inline-flex;
+  height: 3.5rem;
+  width: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.9rem;
+  background: #E3ECEE;
+  color: #1F4E5F;
+  box-shadow: inset 0 -3px 0 #C8963E;
+}
+.why-mark {
+  display: inline-flex;
+  flex-shrink: 0;
+  height: 2rem;
+  width: 2rem;
+  margin-top: 0.15rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: #C8963E;
+  color: #1B2430;
+}
+
+/* Footer */
+.footer-link {
+  color: rgba(246, 244, 239, 0.85);
+  text-decoration: underline;
+  text-decoration-color: rgba(200, 150, 62, 0.6);
+  text-underline-offset: 4px;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+.footer-link:hover {
+  color: #F6F4EF;
+  text-decoration-color: #C8963E;
+}
+#registered-office:target,
+#registered-office.is-highlighted {
+  box-shadow: 0 0 0 8px #1B2430, 0 0 0 11px #C8963E;
+  color: #F6F4EF;
+}
+
+/* Legal dialogs */
+.legal-dialog {
+  width: calc(100% - 2rem);
+  max-width: 46rem;
+  max-height: 85vh;
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 1rem;
+  background: #F6F4EF;
+  color: #1B2430;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.legal-dialog::backdrop {
+  background: rgba(27, 36, 48, 0.7);
+}
+.dialog-close {
+  display: inline-flex;
+  flex-shrink: 0;
+  height: 2.75rem;
+  width: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(27, 36, 48, 0.15);
+  background: #ffffff;
+  color: #1B2430;
+  cursor: pointer;
+}
+.dialog-close:hover {
+  background: #E3ECEE;
+}
+.legal-body h3 {
+  margin-top: 1.5rem;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 1.25rem;
+  color: #1F4E5F;
+}
+.legal-body h3:first-child {
+  margin-top: 0;
+}
+.legal-body p,
+.legal-body li {
+  margin-top: 0.6rem;
+  line-height: 1.65;
+  color: rgba(27, 36, 48, 0.85);
+}
+.legal-body ul {
+  margin-top: 0.6rem;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+.legal-body a {
+  color: #1F4E5F;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+body.dialog-open {
+  overflow: hidden;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .service-card:hover {
+    transform: none;
+  }
+}
